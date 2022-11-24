@@ -158,7 +158,7 @@ showid(50)
 showid("500")*/
 
 /***********************INTERFACES****************/
-interface Point{
+/*interface Point{
     x:number;
     y:number
 }
@@ -171,4 +171,147 @@ const coord:Point={
 function Show(obj:Point){
     console.log (`O valor de X ${obj.x} e y ${obj.y}`)
 }
-Show (coord)
+Show (coord)*/
+
+/********************************LITERAL TYPES***********/
+
+/*function showDirection (direction:"left"| "rigth"){
+    console.log (`A direção foi ${direction}`)
+}
+showDirection ("left")*/
+
+/**********************************SYMBOL********/
+/*var teste:symbol = Symbol("a");
+var teste2 = Symbol("a")
+console.log(teste == teste2)
+console.log(teste === teste2)*/
+
+/*******************************TYPE GUARD******************/
+/*function sum(a: number | string, b: number | string ){
+    if (typeof a === "number" && typeof b ==="number") {
+        return a+b
+    } else{
+        return console.log ("Impossivel realizar a soma")
+    }
+}*/
+
+/*********************************INSTANCEOF**********************/
+/*
+class User{
+    name
+
+    constructor(name:string){
+        this.name=name
+    }
+}
+
+class SuperUser extends User {
+ constructor(name:string){
+    super(name)
+ }
+}
+
+const Jhon = new User("Jhon");
+const May = new SuperUser ("May");
+
+function greetins (user:object){
+    if (user instanceof SuperUser){
+        console.log ("Super usuário")
+    } else if (user instanceof User){
+        console.log("Usuário padrão")
+    }
+}
+
+greetins(Jhon);
+greetins(May);*/
+
+
+/****************************OPERATOR IN ***********************/
+
+/*class Dog {
+    name
+    breed
+    constructor (name:string, breed?:string){
+        this.name = name
+        if (breed){
+            this.breed =breed
+        }
+    }
+}
+
+const bob = new Dog ("bob");
+const rex = new Dog ("rex", "Buldog")
+
+function showBreed(dog:Dog){
+    if ("breed" in dog) {
+        console.log (`O cachorro é da raça ${dog.breed}`)
+    }else{
+        console.log ("O cachorro não possui raça")
+    }
+}
+showBreed(rex)
+showBreed(bob)*/
+
+
+/****************************EXERCICIO**********/
+ /*function review (evaluation:number|boolean){
+    if (typeof evaluation=="number") {
+        if (evaluation===1) {
+            return console.log (`Você avaliou como péssimo, pois sua nota foi ${evaluation}`)
+            
+        } else if (evaluation === 2) {
+            return console.log(`Você avaliou como ruim, pois sua nota foi ${evaluation}`)
+            
+        } else if (evaluation === 3) {
+            return console.log(`Você avaliou como neutro, pois sua nota foi ${evaluation}`)
+
+        } else if (evaluation === 4) {
+            return console.log(`Você avaliou como ótimo, pois sua nota foi ${evaluation}`)
+
+        } else if (evaluation === 5) {
+            return console.log(`Você avaliou como excelente, pois sua nota foi ${evaluation}`)
+
+        }
+    } else if (typeof evaluation == "boolean"){
+        return console.log(`Você não avaliou!`)
+    }
+
+ }
+
+review(1)
+review(2)
+review(3)
+review(4)
+review(5)
+review(false)*/
+
+/*****************************************FUNÇÕES************* */
+
+//SEM RETORNO (VOID)
+
+/*function semRetorno():void{
+     console.log ("Função sem retorno")
+    
+}
+semRetorno()*/
+
+//CALLBACK COMO ARGUMENTO
+
+/*function greeting (name:string):string{
+    return `Olá ${name}`
+}
+
+function preGreeting(f:(name:string)=>string, userName:string){
+    const greet = f(userName)
+    console.log (greet)
+}
+
+preGreeting(greeting, "João")*/
+
+//GENERICS
+
+function primeiroElemento<T>(arr:T[]):T{
+    return arr[0]
+}
+
+console.log (primeiroElemento([5,3,45]))
